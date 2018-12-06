@@ -1,12 +1,16 @@
 const express = require('express'),
-    electricity = express.Router();
+    electricity = express.Router(),
+    low = require('lowdb'),
+    FileSync = require('lowdb/adapters/FileSync'),
+    adapter = new FileSync('db.json'),
+    db = low(adapter);
 
 /**
  * Production journalière
  * @return tableau de la production totale journalière
  */
 electricity.get('/production/day', (req, res) =>{
-    res.json({message: 'Coucou la prod electrique'});
+    res.json(db.get('elec').get('product_day').value());
 });
 
 /**
@@ -14,7 +18,7 @@ electricity.get('/production/day', (req, res) =>{
  * @return production totale en temps réel
  */
 electricity.get('/production/now', (req, res) =>{
-    res.json({message: 'Coucou la prod actuelle'});
+    res.json(db.get(''));
 });
 
 /**
@@ -30,7 +34,7 @@ electricity.get('/consomation/day', (req, res) =>{
  * @return consommation totale en temps réel
  */
 electricity.get('/consomation/now', (req, res) =>{
-    res.json({message: 'Coucou la conso electrique actuelle'});
+    res.json(db.get('elec').get('conso_now').value());
 });
 
 /**
