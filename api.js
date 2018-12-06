@@ -6,9 +6,6 @@ const express = require('express'),
     people = require('./api/people'),
     world = require('./api/world');
 
-api.all('/electricity', (req, res) =>{
-});
-
 api.use('/electricity', electricity);
 
 module.exports = api;

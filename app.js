@@ -1,7 +1,7 @@
 const express = require("express"),
     app = express(),
     port = 8080,
-    api = './api';
+    api = require('./api');
 
 app.use('/api', api);
 
