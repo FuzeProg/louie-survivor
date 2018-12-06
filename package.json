@@ -1,0 +1,24 @@
+{
+  "name": "louie-survivor-rest",
+  "version": "1.0.0",
+  "description": "Parce qu'il est toujours à l'écoute, même quand il est mort. Labilisé ANSSI, parce qu'on le vaut bien.",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mqtt": "^2.18.8"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FuzeProg/louie-survivor-rest.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FuzeProg/louie-survivor-rest/issues"
+  },
+  "homepage": "https://github.com/FuzeProg/louie-survivor-rest#readme"
+}
