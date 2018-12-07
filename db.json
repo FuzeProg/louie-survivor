@@ -1,13 +1,1 @@
-{
-  "elec": {
-    "product_day":  "Product of the day",
-    "product_now":  "Actual product",
-    "conso_day":  "Conso of the day",
-    "conso_now":  "Actual conso",
-    "cell_product_day":  "Product cell of the day",
-    "cell_1":  "Cell 1 state",
-    "cell_2":  "Cell 2 state",
-    "cell_3":  "Cell 3 state",
-  },
-  "food": {"conso_water_day":  "15 L"}
-}
+{}

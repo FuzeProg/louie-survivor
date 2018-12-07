@@ -1,16 +1,13 @@
 const express = require('express'),
-    electricity = express.Router(),
-    low = require('lowdb'),
-    FileSync = require('lowdb/adapters/FileSync'),
-    adapter = new FileSync('db.json'),
-    db = low(adapter);
+    electricity = express.Router();
 
+const glob = global.data.electricity;
 /**
  * Production journalière
  * @return tableau de la production totale journalière
  */
 electricity.get('/production/day', (req, res) =>{
-    res.json(db.get('elec').get('product_day').value());
+    res.json({message: glob.production.day});
 });
 
 /**
@@ -18,23 +15,23 @@ electricity.get('/production/day', (req, res) =>{
  * @return production totale en temps réel
  */
 electricity.get('/production/now', (req, res) =>{
-    res.json(db.get(''));
+    res.json({message: glob.production.now});
 });
 
 /**
  * Consommation journalière
  * @return tableau de la consommation totale journalière
  */
-electricity.get('/consomation/day', (req, res) =>{
-    res.json({message: 'Coucou la conso electrique'});
+electricity.get('/consumtion/day', (req, res) =>{
+    res.json({message: glob.consumtion.day});
 });
 
 /**
  * Consommation en temps réel
  * @return consommation totale en temps réel
  */
-electricity.get('/consomation/now', (req, res) =>{
-    res.json(db.get('elec').get('conso_now').value());
+electricity.get('/consumtion/now', (req, res) =>{
+    res.json({message: glob.consumtion.now});
 });
 
 /**
@@ -42,7 +39,7 @@ electricity.get('/consomation/now', (req, res) =>{
  * @return tableau de la production des piles journalière
  */
 electricity.get('/cell/production/day', (req, res) =>{
-    res.json({message: 'Coucou la prod des piles'})
+    res.json({message: glob.cell.production.day})
 });
 
 /**
@@ -50,7 +47,7 @@ electricity.get('/cell/production/day', (req, res) =>{
  * @return production des piles en temps réel
  */
 electricity.get('/cell/production/now', (req, res) =>{
-    res.json({message: 'Coucou la prod des piles'})
+    res.json({message: glob.cell.production.now})
 });
 
 /**
@@ -59,7 +56,7 @@ electricity.get('/cell/production/now', (req, res) =>{
  */
 electricity.get('/cell/:id', (req, res) =>{
     let id = req.params.id;
-    res.json({message: 'Coucou la pile ' + id});
+    res.json({message: glob.cell.levels[id]});
 });
 
 /**
@@ -67,7 +64,7 @@ electricity.get('/cell/:id', (req, res) =>{
  * @return tableau de la production du vent journalière
  */
 electricity.get('/wind/production/day', (req, res) =>{
-    res.json({message: 'Coucou le vent'});
+    res.json({message: glob.wind.production.day});
 });
 
 /**
@@ -75,7 +72,7 @@ electricity.get('/wind/production/day', (req, res) =>{
  * @return production du vent en temps réel
  */
 electricity.get('/wind/production/now', (req, res) =>{
-    res.json({message: 'Coucou le vent actuelle'});
+    res.json({message: glob.wind.production.now});
 });
 
 /**
@@ -83,7 +80,7 @@ electricity.get('/wind/production/now', (req, res) =>{
  * @return vitesse du vent
  */
 electricity.get('/wind/speed', (req, res) =>{
-    res.json({message: 'Coucou la vitesse du vent'});
+    res.json({message: glob.wind.speed});
 });
 
 /**
@@ -91,7 +88,7 @@ electricity.get('/wind/speed', (req, res) =>{
  * @return taux d'ensoleillement entre 0 et 100
  */
 electricity.get('/sun/state', (req, res) =>{
-    res.json({message: 'Coucou l\'état du soleil'});
+    res.json({message: glob.sun.sate});
 });
 
 /**
@@ -99,7 +96,7 @@ electricity.get('/sun/state', (req, res) =>{
  * @return tableau de la production solaire journalière
  */
 electricity.get('/sun/production/day', (req, res) =>{
-    res.json({message: 'Coucou le soleil du jour'});
+    res.json({message: glob.sun.production.day});
 });
 
 /**
@@ -107,7 +104,7 @@ electricity.get('/sun/production/day', (req, res) =>{
  * @return production solaire en temps réel
  */
 electricity.get('/sun/production/now', (req, res) =>{
-    res.json({message: 'Coucou le soleil actuelle'});
+    res.json({message: glob.sun.production.now});
 });
 
 /**
@@ -116,7 +113,7 @@ electricity.get('/sun/production/now', (req, res) =>{
  */
 electricity.get('/equipment/:id', (req, res) =>{
     let id = req.params.id;
-    res.json({message: 'Coucou equipement ' + id});
+    res.json({message: glob.equipment[id]});
 });
 
 /**

@@ -7,5 +7,6 @@ const express = require('express'),
     world = require('./api/world');
 
 api.use('/electricity', electricity);
+api.use('/food', food);
 
 module.exports = api;

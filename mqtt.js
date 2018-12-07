@@ -18,7 +18,7 @@ client.on('message', async function (topic, message) {
 	message = JSON.parse(message);
 
 	switch (topic) {
-		case 'electricity/consomation/now':
+		case 'electricity/consumtion/now':
 			global.data.elec = message;
 
 	}
