@@ -54,9 +54,8 @@ electricity.get('/cell/production/now', (req, res) =>{
  * Niveau d'énergie des piles en temps réel
  * @return niveau d'énergie des piles en temps réel
  */
-electricity.get('/cell/:id', (req, res) =>{
-    let id = req.params.id;
-    res.json({message: glob.cell.levels[id]});
+electricity.get('/cell/levels', (req, res) =>{
+    res.json({message: glob.cell.levels});
 });
 
 /**

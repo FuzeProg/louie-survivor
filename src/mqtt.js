@@ -14,7 +14,6 @@ client.on('message', async function (topic, message) {
 
 	switch (topic) {
 		case 'electricity/consumtion/now':
-			global.data.elec = message;
-
+			global.data.electricity = message;
 	}
 });

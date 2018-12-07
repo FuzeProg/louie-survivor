@@ -13,11 +13,7 @@ global.data = {
                 "day": "",
                 "now": ""
             },
-            "levels": [{
-                "1": "",
-                "2": "",
-                "3": ""
-            }]
+            "levels": {}
         },
         "wind": {
             "production": {
@@ -33,11 +29,7 @@ global.data = {
                 "now": ""
             }
         },
-        "equipment": [{
-            "1": "",
-            "2": "",
-            "3": ""
-        }]
+        "equipment": {}
     },
     "food": {
         "water": {
@@ -61,6 +53,32 @@ global.data = {
             "stock": {
                 "now": ""
             }
+        }
+    },
+    "world": {
+        "temperature": {
+            "now": "",
+            "interval": ""
+        },
+        "weather": {
+            "message": ""
+        }
+    },
+    "expedition": {
+        "bpm": {
+            "now": ""
+        },
+        "feed": {
+            "now": ""
+        },
+        "geoposition": {
+            "distance": "",
+            "time": "",
+            "long": "",
+            "lat": ""
+        },
+        "weather": {
+            "now": ""
         }
     }
 };
