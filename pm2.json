@@ -3,7 +3,8 @@
     "name"        : "worker",
     "script"      : "./src/app.js",
     "env": {
-      "NODE_ENV": "development"
+      "NODE_ENV": "development",
+      "HOST": "mqtt-to-rest"
     },
     "env_production" : {
       "NODE_ENV": "production"
