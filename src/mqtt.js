@@ -1,6 +1,6 @@
 const mqtt = require('mqtt');
 
-const HOST = 'localhost';
+const HOST = 'mqtt-generator';
 const client = mqtt.connect('mqtt://' + HOST, {port: 1883});
 
 client.on('connect', function () {
@@ -13,7 +13,7 @@ client.on('message', async function (topic, message) {
 	message = JSON.parse(message);
 
 	switch (topic) {
-		case 'electricity/consumtion/now':
-			global.data.electricity = message;
+		case 'electricity/wind/speed':
+			global.data.electricity.wind.speed = message;
 	}
 });

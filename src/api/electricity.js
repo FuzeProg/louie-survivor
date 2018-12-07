@@ -2,6 +2,7 @@ const express = require('express'),
     electricity = express.Router();
 
 const glob = global.data.electricity;
+
 /**
  * Production journalière
  * @return tableau de la production totale journalière
