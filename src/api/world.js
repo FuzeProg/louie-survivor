@@ -12,11 +12,19 @@ world.get('/temperature/now', (req, res) =>{
 });
 
 /**
- * Interval de température sur la journée
- * @return interval de température sur le journée
+ * Température minimale sur la journée
+ * @return température minimale sur la journée
  */
-world.get('/temperature/interval', (req, res) =>{
-    res.json({message: glob.temperature.interval});
+world.get('/temperature/interval/minimale', (req, res) =>{
+    res.json({message: glob.temperature.interval.min});
+});
+
+/**
+ * Température maximale sur la journée
+ * @return température maximale sur la journée
+ */
+world.get('/temperature/interval/maximale', (req, res) =>{
+    res.json({message: glob.temperature.interval.max});
 });
 
 /**

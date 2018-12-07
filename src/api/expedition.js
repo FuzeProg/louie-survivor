@@ -7,15 +7,15 @@ const glob = global.data.expedition;
  * Rythme cardiaque de l'explorateur en temps réel
  * @return rythme cardiaque en temps réel
  */
-expedition.get('/bpm', (req, res) => {
+expedition.get('/bpm/now', (req, res) => {
     res.json({message: glob.bpm.now});
 });
 
 /**
  * Etat nutritif de l'explorateur en temps réel
- * @return etat nutritif en temps réel
+ * @return etat nutritif en temps réel entre 0 et 100
  */
-expedition.get('/feed', (req, res) => {
+expedition.get('/feed/now', (req, res) => {
     res.json({message: glob.feed.now});
 });
 

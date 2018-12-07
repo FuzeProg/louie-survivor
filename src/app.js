@@ -58,7 +58,10 @@ global.data = {
     "world": {
         "temperature": {
             "now": "",
-            "interval": ""
+            "interval": {
+                "min": "",
+                "max": ""
+            }
         },
         "weather": {
             "message": ""
@@ -78,7 +81,7 @@ global.data = {
             "lat": ""
         },
         "weather": {
-            "now": ""
+            "message": ""
         }
     }
 };
